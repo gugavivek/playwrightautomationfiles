@@ -9,8 +9,14 @@ test.only('Calendar Execution',async({page})=>
     await page.locator('.react-calendar__navigation__label').click();
     await page.getByText('2026').click();
     await page.locator('.react-calendar__year-view__months__month').nth(Number(month)-1).click();
-    await page.locator('.react-calendar__month-view__days').getByRole('button', { name:date, exact: true }).click();
-    await page.locator('//abbr[text()='+date+']').click();
+    await page.locator('.react-calendar__month-view__days').waitFor({state:'visible'});
+    //await page.locator(`button[aria-label*=" ${date},"]`)
+        //.waitFor({ state: 'visible' });
+    await page.locator("//abbr[text()='"+date+"']").click();
+
+    //await page.locator(`button[aria-label*=" ${date},"]`).click();
+   // await page.locator('.react-calendar__month-view__days__day').getByRole('button', { name: String(date), exact: true }).click();
+    //await page.locator('//abbr[text()='+date+']').click();
     const input=await page.locator('.react-date-picker__inputGroup');
     await input.screenshot({path:'calendarinput.png',fullPage:true});
     for(let i=0;i<expectedlist.length;i++)

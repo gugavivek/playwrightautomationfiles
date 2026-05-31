@@ -4,7 +4,6 @@ const {POManager}=require('../pageobjects/POManager');
 const testdata=JSON.parse(JSON.stringify(require('./Utils/TestData.json')));
 for( const eachdata  of testdata)
 {
-    //uSES PAGEOBJECT MODEL
 test.only(`E2E Testing ${eachdata.shippingcountry}`,async({page})=>
     {
     console.log('Passing to POManager:', eachdata);

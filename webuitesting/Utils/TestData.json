@@ -1,15 +1,8 @@
 [{
-     //datas are getting failed .
+     
      "username": "dummyemail7@example.com",
      "password": "Dummy@123",
      "productname": "ADIDAS ORIGINAL",
      "shippingcountry": "India",
      "countrykeyword": "ind"
-},
-{
-     "username": "dummyemail7@example.com",
-     "password": "Dummy@123",
-     "productname": "ZARA COAT 3",
-     "shippingcountry": "Brazil",
-     "countrykeyword": "bra"
 }]
