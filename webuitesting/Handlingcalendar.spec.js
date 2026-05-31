@@ -1,5 +1,5 @@
 const{test,expect}=require('@playwright/test');
-test.only('Calendar Execution',async({page})=>
+test('Calendar Execution',async({page})=>
 {    const year=2026;const month=6;const date=1;
 
     const expectedlist=[month,date,year];
