@@ -1,4 +1,4 @@
-const {test,expect}=require('@Playwright/test');
+const {test,expect}=require('@playwright/test');
 test('Labels Practice',async({browser})=>
 {
 const context=await browser.newContext();

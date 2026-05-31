@@ -56,7 +56,7 @@ test('First PW Assignment',async({page})=>
     console.log(productsnames);
 
     });
-    test.only('Childwindowhandling',async({browser})=>
+    test('Childwindowhandling',async({browser})=>
     {
     const Context=await browser.newContext();
     const page=await Context.newPage();

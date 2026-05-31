@@ -4,7 +4,7 @@ const {POManager}=require('../pageobjects/POManager');
 const testdata=JSON.parse(JSON.stringify(require('./Utils/TestData.json')));
 for( const eachdata  of testdata)
 {
-test.only(`E2E Testing ${eachdata.shippingcountry}`,async({page})=>
+test(`E2E Testing ${eachdata.shippingcountry}`,async({page})=>
     {
     console.log('Passing to POManager:', eachdata);
     console.log('productname:', eachdata.productname);

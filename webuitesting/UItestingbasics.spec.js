@@ -7,7 +7,7 @@ await page.goto('https://rahulshettyacademy.com/client');
 }
 );
 
-test.only ('Second PW UI Execution',async({page})=>
+test ('Second PW UI Execution',async({page})=>
 {
     const userName=page.locator('#username');
     const password=page.locator('#password');
