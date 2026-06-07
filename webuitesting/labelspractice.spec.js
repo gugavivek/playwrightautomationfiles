@@ -16,7 +16,7 @@ await page.locator("input[name='bday']").fill('2000-01-01');
 //await page.locator("input[value='Submit']").click();
 await page.getByRole('button',{name:'Submit'}).click();
 await page.getByText('Success! The Form has been submitted successfully!.').isVisible();
-await page.pause();
+//await page.pause();
 await page.getByRole('link',{name:'Shop'}).click();
 await page.locator("app-card").filter({hasText:'Nokia Edge'}).getByRole('button').click();
 }

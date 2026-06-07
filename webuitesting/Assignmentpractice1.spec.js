@@ -72,7 +72,7 @@ test('First PW Assignment',async({page})=>
    console.log(email_dom);
    await newPage.close();
    await page.bringToFront();
-   await page.pause();
+  // await page.pause();
    await page.locator('#username').type(email_dom);
    console.log(await page.locator('#username').inputValue());
   
