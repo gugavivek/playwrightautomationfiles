@@ -92,7 +92,6 @@ await page.locator('table tbody tr').first().waitFor(); // wait for table to ren
 
    const orderid_orders= page.locator('table tbody tr');
    const orderidCount = await orderid_orders.count();
-   await page.pause();
    for(let i=0;i<orderidCount;i++)
    {
     const firstorderid=(await orderid_orders.locator('th').nth(i).textContent()).trim();
