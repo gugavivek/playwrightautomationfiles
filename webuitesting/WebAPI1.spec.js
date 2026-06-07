@@ -20,7 +20,7 @@ test.beforeEach( ()=>
 {
 
 })
-test('login API returns a token',async()=>
+test('@API login API returns a token',async()=>
 {
      expect(response.token).toBeTruthy();
 
@@ -59,7 +59,7 @@ test('passing token values',async({page})=>
 }
 const orderid_viewpage=await page.locator('.col-text').textContent();
 await page.screenshot({path:'orderreference.png',fullPage:false})
-await page.pause();
+//await page.pause();
 expect(response.orderId).toContain(orderid_viewpage.trim());
 
 

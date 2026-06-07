@@ -1,4 +1,5 @@
 const {test,expect}=require('@playwright/test');
+test.describe.configure({mode:'parallel'});
 test('First PW Assignment',async({page})=>
     {
        //const context=await browser.newContext();
@@ -25,21 +26,21 @@ test('First PW Assignment',async({page})=>
        const checkbox=(await page).locator("//input[@type='checkbox']");
     const registerbtn=(await page).locator('#login');
     
-       await firstName.fill('Dummy');
-       await lastName.fill('Jimmy');
-       await email.fill('dummyemail7@example.com');
-       await phoneno.fill('1234567890');
+       await firstName.fill('hkjuooujh');
+       await lastName.fill('jkjookjj');
+       await email.fill('kjl@example.com');
+       await phoneno.fill('6878765768');
        await password.fill('Dummy@123');
        await confirmpassword.fill('Dummy@123');
        await checkbox.click();
        //await checkbox.uncheck();
        await registerbtn.click();
        expect(await checkbox.isChecked()).toBeTruthy();
-       const header=await page.locator('div h1.headcolor');
+       const header=  await page.locator('div h1.headcolor').textContent() ;
        console.log('*****************');
        
-       await expect(header).toHaveText('Account Created Successfully');
-       console.log(await header.textContent());
+        expect ( header).toEqual('Account Created Successfully');
+       console.log( header);
      
     });
     test('Login and Fetch all the products names',async({page})=>
@@ -62,8 +63,10 @@ test('First PW Assignment',async({page})=>
     const page=await Context.newPage();
     await page.goto('https://rahulshettyacademy.com/loginpagePractise/');
     const documentlink=page.locator("[href*='documents-request']");
-    const [newPage]=await Promise.all([ Context.waitForEvent('page'),documentlink.click(),])
-    const text= await newPage.locator(".red").textContent();
+   const [newPage]=await Promise.all([ Context.waitForEvent('page'),documentlink.click()]);
+    //await newPage.waitForLoadState();
+
+   const text=  await newPage.locator(".red").textContent();
     console.log(text);
    const email_dom= text.split('@')[1].split(" ")[0];
    console.log(email_dom);
